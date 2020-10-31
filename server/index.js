@@ -31,6 +31,18 @@ app.get("/consulta", (req, res) => {
     res.send( JSON.stringify(bd) );
 });
 
+app.get("/consulta/:numpizza", (req, res) => {
+    const numPizza = req.params.numpizza;
+
+    if (numPizza >= 0 && numPizza < bd.length) {
+        res.send( JSON.stringify( bd[numPizza] ) );
+    } else {
+        res.status(404).send();
+    }
+
+    
+});
+
 app.listen(porta, () => {
     console.log('Servidor executando!');
 });
