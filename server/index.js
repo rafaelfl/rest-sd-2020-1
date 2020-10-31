@@ -23,6 +23,7 @@ const bd = [
     },
 ];
 
+app.use(express.json());
 
 app.get("/consulta", (req, res) => {
     // consulta bd
@@ -39,8 +40,14 @@ app.get("/consulta/:numpizza", (req, res) => {
     } else {
         res.status(404).send();
     }
+});
 
-    
+app.post("/cadastro", (req, res) => {
+    const pizza = req.body;
+
+    bd.push(pizza);
+
+    res.send("OK");
 });
 
 app.listen(porta, () => {
