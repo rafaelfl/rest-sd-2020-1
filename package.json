@@ -1,0 +1,15 @@
+{
+  "name": "rest-sd-2020-1",
+  "version": "0.0.1",
+  "description": "Servidor e clientes REST usando Express",
+  "main": "server/index.js",
+  "repository": "https://github.com/rafaelfl/rest-sd-2020-1.git",
+  "author": "Rafael Fernandes Lopes <rafael.fernandes@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
