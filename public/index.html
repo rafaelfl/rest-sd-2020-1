@@ -11,19 +11,19 @@
             }
 
             .wrapper {
-            display: grid;
-            grid-template-columns: 100px 100px 100px;
-            grid-gap: 10px;
-            background-color: #fff;
-            color: #444;
+                display: grid;
+                grid-template-columns: 400px 400px;
+                grid-gap: 50px;
+                background-color: #fff;
+                color: #444;
             }
 
             .box {
-            background-color: #444;
-            color: #fff;
-            border-radius: 5px;
-            padding: 20px;
-            font-size: 150%;
+                background-color: #444;
+                color: #fff;
+                border-radius: 5px;
+                padding: 20px;
+                font-size: 150%;
             }
     </style>
 </head>
@@ -53,10 +53,13 @@
 
         const data = response.data;
 
-        document.querySelector(".a").innerHTML = data[0].nome;
-        document.querySelector(".b").innerHTML = data[1].nome;
-        document.querySelector(".c").innerHTML = data[2].nome;
-        document.querySelector(".d").innerHTML = data[3].nome;
+        document.querySelector(".a").innerHTML = "<div><img src='" + data[0].foto + "' width=100 height=100><p>" + data[0].nome + " - R$" + data[0].preco + "</p></div>";
+
+        document.querySelector(".b").innerHTML = "<div><img src='" + data[1].foto + "' width=100 height=100><p>" + data[1].nome + " - R$" + data[1].preco + "</p></div>";
+
+        document.querySelector(".c").innerHTML = "<div><img src='" + data[2].foto + "' width=100 height=100><p>" + data[2].nome + " - R$" + data[2].preco + "</p></div>";
+
+        document.querySelector(".d").innerHTML = "<div><img src='" + data[3].foto + "' width=100 height=100><p>" + data[3].nome + " - R$" + data[3].preco + "</p></div>";
     })
     .catch(function (error) {
         // handle error
