@@ -28,12 +28,12 @@
     </style>
 </head>
 <body>
-    <!-- <div class="wrapper">
+    <div class="wrapper">
         <div class="box a">A</div>
         <div class="box b">B</div>
         <div class="box c">C</div>
         <div class="box d">D</div>
-      </div> -->
+      </div>
 </body>
 
 <script>
@@ -50,6 +50,13 @@
     .then(function (response) {
         // handle success
         console.log(response);
+
+        const data = response.data;
+
+        document.querySelector(".a").innerHTML = data[0].nome;
+        document.querySelector(".b").innerHTML = data[1].nome;
+        document.querySelector(".c").innerHTML = data[2].nome;
+        document.querySelector(".d").innerHTML = data[3].nome;
     })
     .catch(function (error) {
         // handle error
