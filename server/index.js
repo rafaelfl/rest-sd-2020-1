@@ -1,5 +1,4 @@
 const { response } = require('express');
-const path = require('path');
 const express = require('express');
 
 const app = express();
@@ -22,14 +21,15 @@ const bd = [
         foto: "https://pizzariameurancho.com.br/wp-content/uploads/2016/06/pizza-portuguesa_min.jpg",
         preco: 26.0,
     },
+    {
+        nome: "Carne de Sol",
+        foto: "https://www.picanhacia.com.br/wp-content/uploads/2017/01/11379225_1180312101994735_933388139_n-13-510x320.jpg",
+        preco: 40
+    }
 ];
 
 app.use(express.json());
 
-app.get('/', function(req, res){
-    console.log(process.env.PWD + '/public/index.html');
-    res.sendFile(process.env.PWD + '/public/index.html');
-});
 
 app.get("/consulta", (req, res) => {
     // consulta bd
@@ -40,7 +40,7 @@ app.get("/consulta", (req, res) => {
 
 app.get("/consulta/:numpizza", (req, res) => {
     const numPizza = req.params.numpizza;
-
+    
     if (numPizza >= 0 && numPizza < bd.length) {
         res.send( JSON.stringify( bd[numPizza] ) );
     } else {
@@ -50,10 +50,14 @@ app.get("/consulta/:numpizza", (req, res) => {
 
 app.post("/cadastro", (req, res) => {
     const pizza = req.body;
-
+    
     bd.push(pizza);
-
+    
     res.send("OK");
+});
+
+app.get("/", function(req, res){
+    res.sendFile(process.env.PWD + '/public/index.html');
 });
 
 app.listen(porta, () => {
