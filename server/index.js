@@ -25,10 +25,8 @@ const bd = [
 
 app.use(express.json());
 
-app.use(express.staticProvider(__dirname + "/public"));
-
 app.get('/', function(req, res){
-    res.render("index.html");
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 app.get("/consulta", (req, res) => {
