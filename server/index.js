@@ -25,7 +25,7 @@ const bd = [
 
 app.use(express.json());
 
-app.use(express.static(__dirname + "/public"));
+app.use(express.staticProvider(__dirname + "/public"));
 
 app.get('/', function(req, res){
     res.render("index.html");
