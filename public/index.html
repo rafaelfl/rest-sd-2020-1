@@ -37,10 +37,16 @@
 </body>
 
 <script>
-    // alert('OK!');
-    const axios = require('axios');
+    var options = {
+        url: 'https://rest-sd-2020-1.herokuapp.com/consulta',
+        // params: !acceptsData(method.value) ? getParams() : undefined,
+        // data: acceptsData(method.value) ? getData() : undefined,
+        method: 'GET',
+        // headers: getHeaders()
+    };
 
-    axios.get('https://rest-sd-2020-1.herokuapp.com/consulta')
+    // axios.get()
+    axios(options)
     .then(function (response) {
         // handle success
         console.log(response);
