@@ -25,6 +25,10 @@ const bd = [
 
 app.use(express.json());
 
+app.get('/', function(request, response){
+    response.sendFile('index.html');
+});
+
 app.get("/consulta", (req, res) => {
     // consulta bd
     // converte em objetos json
