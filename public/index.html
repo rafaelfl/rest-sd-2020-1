@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello World</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
         body {
             margin: 40px;
@@ -27,17 +28,27 @@
     </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
     <!-- <div class="wrapper">
         <div class="box a">A</div>
         <div class="box b">B</div>
         <div class="box c">C</div>
         <div class="box d">D</div>
-        <div class="box e">E</div>
-        <div class="box f">F</div>
       </div> -->
 </body>
+
 <script>
     // alert('OK!');
+    const axios = require('axios');
+
+    axios.get('https://rest-sd-2020-1.herokuapp.com/consulta')
+    .then(function (response) {
+        // handle success
+        console.log(response);
+    })
+    .catch(function (error) {
+        // handle error
+        console.log(error);
+    });
+
 </script>
 </html>
