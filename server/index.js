@@ -27,8 +27,8 @@ const bd = [
 app.use(express.json());
 
 app.get('/', function(req, res){
-    console.log(path.join(__dirname, './public/index.html'));
-    res.sendFile(path.join(__dirname, './public/index.html'));
+    console.log(process.env.PWD + './public/index.html');
+    res.sendFile(process.env.PWD + './public/index.html');
 });
 
 app.get("/consulta", (req, res) => {
