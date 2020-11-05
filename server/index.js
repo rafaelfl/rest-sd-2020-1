@@ -30,6 +30,7 @@ const bd = [
 
 app.use(express.json());
 
+// middleware do express que inclui um caminho de arquivos estáticos e os serve
 app.use(express.static(process.env.PWD + '/public'))
 
 
@@ -55,11 +56,11 @@ app.post("/cadastro", (req, res) => {
     
     bd.push(pizza);
     
-    res.send("OK");
+    res.send("{ result: 'OK' }");
 });
 
 app.get("/", function(req, res){
-    // res.sendFile(process.env.PWD + '/public/index.html');
+    // função que renderiza o conteúdo do diretório estático
     res.render("index");
 });
 
