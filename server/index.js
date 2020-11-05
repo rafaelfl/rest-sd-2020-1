@@ -30,6 +30,8 @@ const bd = [
 
 app.use(express.json());
 
+app.use(express.static(process.env.PWD + '/public'))
+
 
 app.get("/consulta", (req, res) => {
     // consulta bd
@@ -57,7 +59,8 @@ app.post("/cadastro", (req, res) => {
 });
 
 app.get("/", function(req, res){
-    res.sendFile(process.env.PWD + '/public/index.html');
+    // res.sendFile(process.env.PWD + '/public/index.html');
+    res.render("index");
 });
 
 app.listen(porta, () => {
